@@ -1,0 +1,18 @@
+INFORMACION SOBRE FORMAS Y CAMINOS A TOMAR:
+
+-El archivo excel que debe ser entregado puede ser un df creado a partir de ir agregando las filas que coinciden con los filtros
+-utilizar expresiuones regulares para mostrar que las fechas tienen un formato valido para ser comparado
+-Fechas en .csv dadas como objeto, pasar a datetime, date o time (creo que converters, revisar en internet),
+    tal vez no es necesario y se puede comparar en object con string, o dar argumento como object
+-(extra)se pueden entregar graficas con estadisticas de lo pedido
+
+DATOS Y FUNCIONES DE DOCUMENTACION DE PANDAS QUE PUEDEN SERVIR Y DATOS A TENER EN CUENTA:
+
+-usecols filtra las columnas obtenidas y mostradas, no queda claro si es solo se puede usar con la funcion read_csv()
+- .iloc[i,j] ubica un dato por posicion de fila=i y columna=j, se puede colocar : tal y como funciona la posicion de listas en python
+- .loc[1:''] entre comillas se puede escribir el nombre de la columna, asi busca la fila i y columna de ese nombre, 
+    se puede colocal mas de una columna con el sig formato ('','')
+-para filtros de fila: df[(condicion) & (condicion)] , para llamar a la columna que queremos colocar el filtro: df['nombrefila']
+-dentro del () de read_csv() se pude usar parce_dates=[] de distintas maneras para convertir siertas columnas en el tipo de dato datetime, 
+    ver documentacion: IO tools, CSVs & text files, Date handling
+-info de como escribir en documentacion: IO tools, CSVs & text files, writing out data . Buscar en el indice: to excel
