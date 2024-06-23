@@ -16,3 +16,47 @@ DATOS Y FUNCIONES DE DOCUMENTACION DE PANDAS QUE PUEDEN SERVIR Y DATOS A TENER E
 -dentro del () de read_csv() se pude usar parce_dates=[] de distintas maneras para convertir siertas columnas en el tipo de dato datetime, 
     ver documentacion: IO tools, CSVs & text files, Date handling
 -info de como escribir en documentacion: IO tools, CSVs & text files, writing out data . Buscar en el indice: to excel
+
+filtro=((df['Inicio_de_Conexión_Dia']>=fecha_inicio) &
+            (df['Inicio_de_Conexión_Hora']>=hora_inicio) &
+            (df['Inicio_de_Conexión_Dia']<=fecha_fin) &
+            (df['Inicio_de_Conexión_Hora']<=hora_fin) &
+            (df['Usuario']==usuario))
+    archivo_filtrado=df[filtro]
+
+df_usuario=df[df['Usuario']==usuario].copy()
+    df_fechas=df_usuario[(df['Inicio_de_Conexión_Dia']>=fecha_inicio) &
+            (df['Inicio_de_Conexión_Hora']>=hora_inicio) &
+            (df['Inicio_de_Conexión_Dia']<=fecha_fin) &
+            (df['Inicio_de_Conexión_Hora']<=hora_fin)]
+
+archivo_filtrado=df[(df['Inicio_de_Conexión_Dia']>=fecha_inicio) &
+            (df['Inicio_de_Conexión_Hora']>=hora_inicio) &
+            (df['Inicio_de_Conexión_Dia']<=fecha_fin) &
+            (df['Inicio_de_Conexión_Hora']<=hora_fin) &
+            (df['Usuario']==usuario)]
+    print(archivo_filtrado)
+    return archivo_filtrado
+
+CODIGO DE HORA:
+
+data_df['Inicio_de_Conexión_Hora'] = pd.to_datetime(data_df['Inicio_de_Conexión_Hora'], format='%H:%M:%S', errors='coerce').dt.time
+
+def validacion_hora(hora):
+    hora_re=r"^\d{2}:\d{2}:\d{2}$"
+    if re.match(hora_re,hora):
+        try:
+            hora=datetime.strptime(hora,'%H:%M:%S').time()
+            return hora
+        except ValueError:
+            print('hora no valida')
+            return None
+    else:
+        print('hora no valida') 
+        return None
+
+#hora_inicio=input('ingrese la hora desde donde se quiere analizar: ')
+#hora_fin=input('ingrese la hora hasta la cual se quiere analizar: ')
+
+#hora_inicio=validacion_hora(hora_inicio)
+#hora_fin=validacion_hora(hora_fin)
