@@ -20,4 +20,4 @@ def validacion_usuario(df,usuario):
         return usuario
     else: 
         print('usuario inexistente')
-        return None
+        return False

@@ -12,5 +12,5 @@ def cant_mac_a(df_filtrado):
         cantidad.add(i)
     list(cantidad)
     nro_cant=len(cantidad)
-    print(nro_cant)
-    return nro_cant
+    print('El usuario se conecto con: ', nro_cant ,'dispositivos')
+    return 'El usuario se conecto con: ', nro_cant ,'dispositivos'

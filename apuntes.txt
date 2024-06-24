@@ -60,3 +60,47 @@ def validacion_hora(hora):
 
 #hora_inicio=validacion_hora(hora_inicio)
 #hora_fin=validacion_hora(hora_fin)
+
+
+
+TKINTER:
+
+-.pack a botones para que se ejecuten, buscar opciones dentro de .pack
+
+
+import tkinter as tk
+app=tk.Tk()
+
+app.geometry("1200x900")
+app.configure(background='lavender')
+tk.Wm.wm_title(app,'Analizador de CSV')
+
+
+
+tk.Label(
+    app,
+    text='ingrese el usuario y fechas que desea filtrar',
+    font=(14),
+    fg='black',
+    bg='lavender',
+    justify='center'
+).pack()
+
+tk.Button(
+    app,
+    text='FILTAR',
+    font=('Modern', 16),
+    bg='light sky blue',
+    fg='Black',
+).pack()
+
+tk.Entry(
+    app,
+    textvariable='usuario: '
+)
+
+app.mainloop()
+
+
+IKDEOPMJEC
+
