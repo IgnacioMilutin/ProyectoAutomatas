@@ -7,7 +7,6 @@ data_df=pd.read_csv('export-2019-to-now-v4.csv')
 
 data_df['Inicio_de_Conexión_Dia'] = pd.to_datetime(data_df['Inicio_de_Conexión_Dia'], format='%Y-%m-%d', errors='coerce').dt.date
 data_df['Usuario']=data_df['Usuario'].astype(str)
-#print(data_df.dtypes)
 
 usuario=input('ingrese el usuario al que desea filtrar: ')
 fecha_inicio=input('ingrese la fecha desde donde se quiere analizar: ')
