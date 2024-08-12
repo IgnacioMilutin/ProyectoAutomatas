@@ -1,3 +1,11 @@
+CORRECCIONES:
+
+-Listado de usuario con numeros
+-Listado y preguntas todo juntos
+
+
+
+
 INFORMACION SOBRE FORMAS Y CAMINOS A TOMAR:
 
 -El archivo excel que debe ser entregado puede ser un df creado a partir de ir agregando las filas que coinciden con los filtros

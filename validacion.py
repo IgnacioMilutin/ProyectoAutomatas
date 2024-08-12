@@ -3,21 +3,26 @@ import re
 import pandas as pd
 
 def validacion_fecha(fecha):
-    fecha_re=r"^\d{4}-\d{2}-\d{2}$"
-    if re.match(fecha_re,fecha):
-        try: 
-            fecha=datetime.strptime(fecha,'%Y-%m-%d').date()
-            return fecha
-        except ValueError:
-            print('fecha no valida')
+    while True:
+        fecha_re=r"^\d{2}-\d{2}-\d{4}$"
+        if re.match(fecha_re,fecha):
+            try: 
+                fecha=datetime.strptime(fecha,'%d-%m-%Y').date()
+                return fecha
+            except ValueError:
+                print('fecha no valida, ingrese la fecha con el format dd-mm-YYYY')
+                return None
+        else: 
+            print('fecha no valida, ingrese la fecha con el format dd-mm-YYYY')
             return None
-    else: 
-        print('fecha no valida')
-        return None
 
-def validacion_usuario(df,usuario):
+def validacion_usuario(df,numero,numero_usuario):
+    usuario=numero_usuario.get(numero)
+    if usuario is None:
+        print('El numero ingresado no estas en lista')
+        return None
     if df['Usuario'].isin([usuario]).any():
         return usuario
     else: 
         print('usuario inexistente')
-        return False
+        return None

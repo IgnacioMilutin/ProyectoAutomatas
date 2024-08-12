@@ -23,4 +23,3 @@ def app(df):
     text_usuarios.pack(padx=10, pady=10)
     btn_mostrar.pack()
     app.mainloop()
-
