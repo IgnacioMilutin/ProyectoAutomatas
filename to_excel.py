@@ -11,7 +11,7 @@ def to_excel(df,confirmacion):
         else:
             print('No se creo el archivo, pruebe nuevamente')
         return None
-    elif confirmacion=='n':
+    elif confirmacion=='N':
         print('No se creo el archivo')
         return None
     else: 
